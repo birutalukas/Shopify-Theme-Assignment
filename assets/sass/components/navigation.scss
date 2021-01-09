@@ -1,0 +1,17 @@
+.nav-bar {
+	width: 100%;
+	padding: 2rem 0;
+	nav {
+		display: flex;
+		justify-content: center;
+		a {
+			font-size: 2rem;
+			color: black;
+			padding: 0.5rem 1rem;
+			margin: 0 1rem;
+			&:last-child {
+				float: right;
+			}
+		}
+	}
+}

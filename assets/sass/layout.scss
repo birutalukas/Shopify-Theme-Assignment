@@ -1,0 +1,10 @@
+.container {
+	margin: 0 auto;
+	width: 90%;
+	max-width: 1024px;
+}
+.flex-container {
+	@extend .container;
+	display: flex;
+	flex-wrap: wrap;
+}
