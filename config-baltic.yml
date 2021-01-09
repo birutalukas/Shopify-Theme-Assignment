@@ -1,0 +1,7 @@
+development:
+    store: success-in-baltic.myshopify.com
+    password: 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
+    theme_id: "live"
+    ignore_files:
+        - "*.swp"
+        - "config/settings_data.json"
