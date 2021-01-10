@@ -1,0 +1,17 @@
+<div class="announcement hidden">
+    <p>{{ section.settings.announcement }}</p>
+    <img src="{{ 'close.svg' | asset_url }} " class="announcement__close" />
+</div>
+
+{% schema %}
+  {
+    "name": "Announcement",
+    "settings": [
+      {
+        "id": "announcement",
+        "type": "text",
+        "label": "Announce something special"
+      }
+    ]
+    }
+{% endschema %}
