@@ -1,0 +1,66 @@
+<div class="content">
+    <div class="container">
+        {% if section.settings.cta-heading or section.settings.cta-description != '' %}
+            <div class="section-heading">
+                <h3> {{ section.settings.cta-heading }} </h3>
+                {{ section.settings.cta-description }}
+            </div>
+        {% endif %}
+        <div class="flex-container--center"> 
+            {% for block in section.blocks %}  
+                <a href="{{ block.settings.cta-link }}" class="btn--cta">{{ block.settings.cta-linktext }}</a>
+            {% endfor %}
+        </div> 
+    </div> 
+</div>
+
+{% schema %}
+{
+    "name": "CTA Blocks",
+	    "max_blocks": 2,
+    "settings": [
+        {
+            "id": "cta-heading",
+            "type": "text",
+            "label": "Heading"
+        },
+        {   
+            "id": "cta-description",
+            "type": "richtext",
+            "label": "Description"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "select",
+            "name": "Add Button",
+            "settings": [
+                {
+                    "id": "cta-link",
+                    "type": "url",
+       		        "label": "Button link"
+                },
+                {
+                    "id": "cta-linktext",
+                    "type": "text",
+                    "label": "Button text"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Call to Action",
+            "category": "CTA button",
+            "blocks": [
+                { 
+                    "type": "select"
+                },
+                {
+                    "type": "select"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

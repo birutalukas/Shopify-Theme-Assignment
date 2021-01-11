@@ -1,0 +1,32 @@
+{% assign product_item = block.settings %}
+<div class="content">
+    <div class="flex-container">
+        {% assign product = all_products[product_item.productas] %}
+        {% if product != blank %}
+        <div class="content__block--third--center">
+            <a href="{{ product.url }}">
+                <h3>{{ product.title }}</h3>
+                <img src="{{ product.featured_image | img_url: 'master' }}">
+                <div class="product__price">
+                    <h3>{{ product.price | money | remove: ',00' }}</h3>
+                </div>
+            </a>
+        </div>
+        {% endif %}
+        {% unless product_item.title and product_item.product_description == '' and product_item.image == null %}
+            <div class="content__block--two-thirds">
+                {% if product_item.title != '' %}
+                    <div class="section-heading">
+                        <h2>{{ product_item.title }}</h2>
+                    </div>
+                {% endif %}
+                {% if product_item.product_description != '' %}
+                    <p>{{ product_item.product_description }}</p>
+                {% endif %}
+                {% if product_item.image != null %}
+                    <img src="{{ product_item.image | img_url: 'large' }}" alt="">
+                {% endif %}
+            </div>
+        {% endunless %}
+    </div>
+</div>

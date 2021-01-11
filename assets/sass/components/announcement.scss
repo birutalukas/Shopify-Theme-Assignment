@@ -1,5 +1,6 @@
 .announcement {
     position: fixed;
+    z-index: 999;
     top: 0;
     width: 100%;
     display: flex;
@@ -16,6 +17,7 @@
         font-size: .75rem;
         letter-spacing: 5px;   
         color: white;
+        margin-bottom: 0;
     }
     &__close {
         position: absolute;

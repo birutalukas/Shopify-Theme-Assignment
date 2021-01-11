@@ -7,11 +7,30 @@
 	@extend .container;
 	display: flex;
 	flex-wrap: wrap;
+	&--center {
+		@extend .flex-container;
+		justify-content: center;
+		align-items: center;
+	}
 }
-.section-heading {
-	width: 100%;
-	text-align: center;
-	h1 {
-		font-size: 3rem;
+.content {
+	margin: 5rem 0;
+	img {
+		width: 100%;
+	}
+	&__block--third {
+		width: 33.3333%;
+		&--center {
+			@extend .content__block--third;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			margin: 0 auto;
+		}
+	}
+	&__block--two-thirds {
+		width: 66.6666%;
 	}
 }

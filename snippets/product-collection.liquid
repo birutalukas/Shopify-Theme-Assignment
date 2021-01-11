@@ -1,0 +1,35 @@
+{% assign collection_item = block.settings %}
+<div class="content">
+    <div class="container">
+        {% if collection_item.collection_title != '' %}
+            <div class="section-heading">
+                <h2>{{ collection_item.collection_title }}</h2>
+            </div>
+        {% endif %}
+        {% if collection_item.collection_description != '' %}
+            <div class="collection__item__description">
+                {{ collection_item.collection_description }}
+            </div>
+        {% endif %}
+    </div>
+</div>
+<div class="content">
+    <img src="{{ collection_item.collection_additional_image | img_url: 'master' }}" alt="">
+    <div class="content">
+        <div class="flex-container">
+            {% for product in collections[collection_item.product_collection].products %}
+                <a href="{{ product.url}}" class="collection__item">
+                    <div class="collection__item__image">
+                        <img src="{{ product.featured_image | img_url: 'medium'}}">
+                    </div>
+                    <div class="collection__item__description">
+                            {{ product.title }}
+                    </div>
+                    <div class="collection__item__price">
+                        {{ product.price | money | remove: ',00'}}
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>

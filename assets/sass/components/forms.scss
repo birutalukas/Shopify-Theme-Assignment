@@ -1,0 +1,27 @@
+form.subscribe {
+    width: 100%;
+    display: flex;
+    input {
+        width: 70%;
+        padding: 1rem;
+        background-color: black;
+        border: 1px solid white;
+        border-right: none;
+        color: white;
+        outline-color: white;
+        &::placeholder {
+            color: white;
+            opacity: .7;
+        }
+        &[type="submit"] {
+            width: 30%;
+            background-color: white;
+            color: black;
+            transition: .25s ease-in;
+            cursor: pointer;
+            &:hover {
+                opacity: .7;
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+.btn {
+    width: 100px;
+    padding: 1rem 0;
+    text-align: center;
+    background-color: black;
+    color: white !important;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    min-width: 250px;
+    transition: .3s ease-in-out;
+    &--cta {
+        @extend .btn;
+        margin-right: 2rem;
+        border: 1px solid black;
+        &:hover {
+            background-color: white;
+            color: black !important;
+        }
+        &:last-child {
+            margin-right: 0;
+            background-color: transparent;
+            border: 1px solid black;
+            color: black !important;
+            &:hover {
+                background-color: black;
+                color: white !important;
+            }
+        }
+    }
+}

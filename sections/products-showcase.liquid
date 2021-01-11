@@ -1,0 +1,74 @@
+{% for block in section.blocks %}
+    {% case block.type %}
+        {% when 'product' %}
+            {% include 'featured-product' %}
+        {% when 'collection' %}
+            {% include 'product-collection' %}
+    {% endcase %}
+{% endfor %}
+
+{% schema %}
+{
+    "name": "Product Features",
+    "blocks": [
+        {
+            "name" : "Featured Product",
+            "type": "product",
+            "settings": [
+                {
+                    "type": "product",
+                    "id": "productas",
+                    "label": "Choose one"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Name of this product"
+                },
+                {
+                    "type": "textarea",
+                    "id": "product_description",
+                    "label": "Describtion of Product"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Choose an image"
+                }
+            ]       
+        },
+        {
+            "name" : "Product Collection",
+            "type": "collection",
+            "settings": [
+                {
+                    "type": "collection",
+                    "id": "product_collection",
+                    "label": "Choose one"
+                },
+                {
+                    "type": "text",
+                    "id": "collection_title",
+                    "label": "Heading of this Collection"
+                },
+                {
+                    "type": "textarea",
+                    "id": "collection_description",
+                    "label": "Describtion of Collection"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "collection_additional_image",
+                    "label": "Additional Image"
+                }
+            ]       
+        }
+    ],
+    "presets": [
+        {
+            "name" : "Featured Product",
+            "category" : "Products"
+        }
+    ]
+}
+{% endschema %}

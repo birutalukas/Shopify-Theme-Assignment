@@ -1,6 +1,6 @@
 .nav-bar {
 	width: 100%;
-	padding: 2rem 0;
+	padding: 3rem 0;
 	nav {
 		display: flex;
 		justify-content: center;
@@ -9,8 +9,42 @@
 			color: black;
 			padding: 0.5rem 1rem;
 			margin: 0 1rem;
-			&:last-child {
-				float: right;
+			display: inline-block;
+			margin-left: 35px;
+			position: relative;
+			&:first-child {
+				margin-left: 0;
+			}
+			&:hover {
+				&:before {
+					opacity: 1;
+					top: 3rem;
+					width: 110%;
+				}
+			}
+			&:before {
+				position: absolute;
+				content: "";
+				height: 3px;
+				width: 0;
+				left: -7%;
+				top: 3rem;
+				background-color: black;
+				opacity: 0;
+				transition: 0.5s ease;
+			}
+		}	
+	}
+}
+.footer-nav {
+	li {
+		margin-bottom: .75rem;
+		a {
+			font-size: 1.5rem;
+			color: white;
+			transition: .1s ease-in;
+			&:hover {
+				margin-left: 1rem;
 			}
 		}
 	}

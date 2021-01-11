@@ -2,16 +2,33 @@
 
 {% section 'hero' %} 
 
-{% for product in collections.frontpage.products limit:4 %}
-<div>
-	<a href="{{ product.url | within: collection }}">{{ product.title }}</a>
-	{{ product.price | money }}
-	{% unless product.available %}<br /><strong>sold out</strong>{% endunless %}
-	<a href="{{ product.url | within: collection }}">
-		<img
-			src="{{ product.featured_image.src | img_url: 'large' }}"
-			alt="{{ product.featured_image.alt | escape }}"
-		/>
-	</a>
+{% section 'products-showcase' %} 
+
+<div class="content">
+	<div class="section-heading">
+		<h2>Our Products</h2>
+	</div>
+	<div class="flex-container">
+		{% for product in collections.frontpage.products limit:4 %}
+			<div class="product">
+				<div class="product__image">
+					<a href="{{ product.url | within: collection }}">
+						<img
+							src="{{ product.featured_image.src | img_url: 'large' }}"
+							alt="{{ product.featured_image.alt | escape }}"
+						/>
+					</a>
+				</div>
+				<div class="product__title">
+					<a href="{{ product.url | within: collection }}">{{ product.title }}</a>
+				</div>
+				<div class="product__price">
+					{{ product.price | money | remove: ',00' }}
+					{% unless product.available %}<br /><strong>sold out</strong>{% endunless %}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
 </div>
-{% endfor %}
+
+{% section 'call-to-action' %}

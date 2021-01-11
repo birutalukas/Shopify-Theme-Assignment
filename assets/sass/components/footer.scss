@@ -1,0 +1,16 @@
+footer {
+    width: 100%;
+    background-color: black;
+    padding: 5rem 0;
+}
+.footer__col {
+    width: 25%;
+    &--big {
+        width: 50%;
+        color: white;
+    }
+}
+.footer__heading {
+    margin-bottom: 2rem;
+    color: white;
+}

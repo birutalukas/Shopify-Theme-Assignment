@@ -1,23 +1,29 @@
-<div class="hero" style="background-image: url( {{ section.settings.hero-image | img_url: 'master' }} )" >
+<div class="hero" style="background-image: url(' {{ section.settings.hero-image | img_url: 'master' }} ')" >
 	<div class="hero__content">
-		<h1>{{ section.settings.hero-text }}</h1>
+    <h1>{{ section.settings.hero-text }}</h1>
+    {{ section.settings.hero-subheading }}
 	</div>
 </div>
 
 {% schema %}
-  {
+{
     "name": "Hero",
     "settings": [
-      {
-        "id": "hero-text",
-        "type": "text",
-        "label": "Place for Your heading"
-      },
-      {
-        "id": "hero-image",
-        "type": "image_picker",
-        "label": "Add Your cover image for greeting the customer"
-      }
+    	{
+        	"id": "hero-text",
+        	"type": "text",
+        	"label": "Place for Your heading"
+      	},
+      	{
+        	"id": "hero-image",
+        	"type": "image_picker",
+        	"label": "Add Your cover image for greeting the customer"
+      	},
+      	{
+      		"type": "richtext",
+      		"id": "hero-subheading",
+      		"label": "This is a place for description"
+      	}
     ]
-    }
+}
 {% endschema %}
